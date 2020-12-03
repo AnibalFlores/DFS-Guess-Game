@@ -1,0 +1,331 @@
+
+/*
+ISPC
+Curso: Desarrollador Full Stack 2020
+Aula/Sala: A 
+Alumno: Flores, Aníbal H.
+Email:  floresanibal@yahoo.com.ar
+Practico Nro.: 2
+Fecha de entrega: 25/11/2020
+Tema: "Colección de figuritas de fútbol" */
+
+/* Fonts Definitions */
+  @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-Light.ttf');
+      font-display: swap;
+      font-weight: 300;
+  }
+
+    @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-Light.ttf');
+      font-display: swap;
+      font-weight: 300;
+      font-style: italic;
+  }
+
+    @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-Regular.ttf');
+      font-display: swap;
+      font-weight: 400;
+  }
+
+  
+    @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-RegularItalic.ttf');
+      font-display: swap;
+      font-weight: 400;
+      font-style: italic;
+  }
+  
+  @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-SemiBold.ttf');
+      font-display: swap;
+      font-weight: 600;
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    src: url('./fonts/Montserrat-SemiBoldItalic.ttf');
+    font-display: swap;
+    font-weight: 600;
+    font-style: italic;
+}
+
+  
+  @font-face {
+      font-family: Montserrat;
+      src: url('./fonts/Montserrat-Bold.ttf');
+      font-display: swap;
+      font-weight: 700;
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    src: url('./fonts/Montserrat-BoldItalic.ttf');
+    font-display: swap;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/** HTML elements **/
+body
+{
+  background: #ddc050;
+  background-image: url("../images/old_paper.jpg");
+	font-family: Montserrat;
+  font-size: 14px;
+	margin: auto;
+}
+
+div{
+  justify-content: center;
+}
+
+header{
+  text-align: center;
+}
+
+h5{
+  padding: 3%;
+}
+
+.row{
+  padding: 1%;
+  background-color: rgba(255, 228, 196, 0.575);
+}
+
+.normal{
+  text-align: justify;
+  vertical-align: middle;
+  font-family: Montserrat;
+  font-weight: 500;
+  padding: 3%;
+  padding-block: 5% 2%;
+  color: black;
+}
+
+.bold{
+    font-weight: bolder;
+}
+
+.image{
+    float: inline-start;
+    width: 100%;
+    height: 100%;
+    padding: 3% 3%;
+    
+}
+
+.photo{
+  border: 1px solid darkred;
+  border-collapse: collapse;
+  align-items: center;
+  border-radius: 8px;
+  background-color: bisque;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.imagefooter{
+  padding: 5%;
+  vertical-align: middle;
+  font-weight: lighter;
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+}
+
+.footer{
+  background-color: rgba(0, 0, 0, 0.486);
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding: 3%;  
+}
+
+/**** Logo Section  *****/
+h1
+{
+	background-color:#503d0471;
+	color: black;
+	margin:0;
+	min-height:0;
+	padding:10px;
+	text-decoration:none;	
+}
+
+h1 a
+{
+	display:block;
+	height:100%;
+	min-height:40px;
+	overflow:hidden;
+}
+
+/* Internet Explorer Fix */
+img
+{
+	behavior:url(./iepngfix.htc);
+	border:none;
+}
+
+/* Nav Bar Menu */
+.navbar .nav-item.active> a, 
+.navbar .nav-item.active> a:focus, 
+.navbar .nav-item.active> a:hover {
+  color: black;
+  background: rgb(204, 160, 14);
+  border-radius: 6px;
+}
+
+ul {
+    font-family: Montserrat;
+    font-weight: 600;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    color: black !important;
+    background-color: orange;
+    border-radius: 6px;
+  }
+
+ /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 695px;
+  padding: 1%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: bisque;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: bisque;
+  color: black;
+  transform: rotateY(180deg);
+} 
+
+.over{
+  position: absolute;
+  background-color: #ffffff94;
+  top: 8px;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 1%;
+}
+
+.copyleft {
+  display: inline-block;
+  transform: rotateY(180deg);
+}
+
+.copyleft::after {
+  content: "\00a9";
+}
+
+.copyrigth {
+  display: inline-block;
+  transform: rotateY(180deg);
+}
+
+.help-block{
+  background-color: rgba(255, 0, 0, 0.384); 
+}
+h1 {
+	font: bold 36px/100% Montserrat,Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+@media screen and (max-width: 400px) {
+   .flip-box {
+    height: 600px;
+    padding-left: 6%;
+  }
+}
+
+@media screen and (min-width: 401px) {
+   .flip-box {
+    height: 730px;
+    padding: 1%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+   .flip-box {
+   height: 530px !important;
+   padding: 5px;
+ }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .flip-box {
+   height: calc(100vh - 60px) !important;
+   padding: 5px  !important;
+ }
+}
+
+@media screen and (min-width: 3800px) {
+  .flip-box {
+   height: calc(100vh - 150px) !important;
+   padding: 10px  !important;
+ }
+}
