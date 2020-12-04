@@ -1,17 +1,18 @@
-# DFS-Responsive con Bootstrap y Javascript
+# DFS-Guess-Game
 An exercise about basics on bootstrap and javascript
 ## Task rules 
 Build a web site (content of your choice) 2 or 3 pages including:
-* Keep functionality of previous task. 
-* Add Bootstrap and navbar.
-* Add Javascript functionalities.
-* Full Responsive design.
-* Validate Form before sending (Js Validator).
+* Keep functionality of previous task (Bootstrap + javascript). 
+* Guess form must have a text input and a button
+* Give to the user 2 clues for guesses 2 and 3
+* Inform the remaining guess oportunities all the time
+* Inform the final result after 4 oportunities
 ## Summary
 
-The web site consist of 3 responsive pages.
+The web site consist of 4 responsive pages.
 * index.html: Landing page with images and text formmated in div bootstraped rows and cols table
 * gallery.html: A page with a columns table of images with fliping styling based in W3Schools examples
+* guess_game.html: A page with a form and bootstrap alerts
 * contact_us.html: A simple contact form with basic fields (validation implemented via jquery validator plugin)   
 
 ## Tested

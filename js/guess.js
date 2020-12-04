@@ -52,20 +52,19 @@ var guess = {
 
         // Miss - Give some hints
         else {
-            
+
             if (guess.count == 1) {
+                text = "No te desanimes y vuelve a intentar!";
+            }
+            
+            if (guess.count == 2) {
                 guess.help1.style.display = 'inline';
                 text = "Haz click en el primer dado de ayuda y vuelve a intentar!";
             }
 
-            if (guess.count == 2) {
+            if (guess.count == 3) {
                 guess.help2.style.display = 'inline';
                 text = "Opps! usa los dados de ayuda y reintenta!";
-            }
-
-            if (guess.count == 3) {
-                guess.help3.style.display = 'inline';
-                text = "No te desanimes! aprovecha los dados de ayuda e intenta nuevamente!";
             }
 
             if (guess.count == 4) {
@@ -76,7 +75,6 @@ var guess = {
                 guess.field.readOnly = true;
                 guess.help1.style.display = "none";
                 guess.help2.style.display = "none";
-                guess.help3.style.display = "none";
                 guess.button.value = "Reiniciar";
                 guess.form.removeEventListener("submit", guess.check);
                 guess.form.addEventListener("submit", guess.reset);
@@ -87,7 +85,7 @@ var guess = {
             // document.getElementById('help1').style.display = 'block'
 
             // Interface update
-            guess.counter.innerHTML = "Intentos: " + guess.count;
+            guess.counter.innerHTML = "Intentos: " + (4 - guess.count);
             guess.txt.innerHTML = text;
         }
 
@@ -100,7 +98,7 @@ var guess = {
     /* [RESET THE GAME] */
     reset: function(evt) {
         guess.count = 0;
-        guess.counter.innerHTML = "Intentos: 0";
+        guess.counter.innerHTML = "Intentos: 4";
         guess.txt.innerHTML = "";
         guess.txt.classList.remove("hit");
         guess.field.readOnly = false;
@@ -110,17 +108,13 @@ var guess = {
         guess.form.addEventListener("submit", guess.check);
         guess.help1.style.display = "none";
         guess.help2.style.display = "none";
-        guess.help3.style.display = "none";
         if (guess.isvisible(guess.alert1)) {
             guess.alert1.click();
         }
         if (guess.isvisible(guess.alert2)) {
             guess.alert2.click();
         }
-        if (guess.isvisible(guess.alert3)) {
-            guess.alert3.click();
-        }
-
+      
         // For the cheaters
         console.log("Respuesta - " + guess.jackpot);
 
@@ -145,10 +139,9 @@ window.addEventListener("load", function() {
     guess.txt = document.getElementById("guess-txt");
     guess.help1 = document.getElementById('help1');
     guess.help2 = document.getElementById('help2');
-    guess.help3 = document.getElementById('help3');
     guess.alert1 = document.getElementById('alert1btn');
     guess.alert2 = document.getElementById('alert2btn');
-    guess.alert3 = document.getElementById('alert3btn');
+
     // Attach on submit event
     guess.form.addEventListener("submit", guess.check);
 
