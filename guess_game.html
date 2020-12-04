@@ -1,0 +1,207 @@
+<!--
+ISPC
+Curso: Desarrollador Full Stack 2020
+Aula/Sala: A 
+Alumno: Flores, Aníbal H.
+Email:  floresanibal@yahoo.com.ar
+Practico Nro.: 3
+Fecha de entrega: 4/12/2020
+Tema: "Colección de figuritas de fútbol" -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Juego de Adivinanza</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- Mis CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Guess Game -->
+    <script src="js/guess.js"></script>
+    <!-- Additonal StyleSheet for form -->
+    <link rel="stylesheet" type="text/css" href="css/form.css" media="all">
+    <!-- Inner Style -->
+    <style>
+        #footer {
+            clear: both;
+            color: #424242;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 15px;
+            font-size: 85%;
+        }
+
+        #licence.a {
+            color: white;
+            background-color: transparent;
+        }
+
+        .btn-default {
+            background-color: #4d3107;
+            color: #FFF;
+            border-color: #a57204;
+        }
+
+        .btn-default:hover,
+        .btn-default:focus,
+        .btn-default:active,
+        .btn-default.active,
+        .open .dropdown-toggle.btn-default {
+            background-color: #a57204;
+            color: #FFF;
+            border-color: #443e05;
+        }
+
+        .guess {
+            background-color: transparent;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-fluid">
+        <section>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Galería</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Juego <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact_us.html">Contáctenos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <header>
+                    <h1>Juego de Adivinanza</h1>
+                    <h5>De la colección de figuritas se te hará una pregunta y dispondrás de un máximo de cuatro
+                        intentos y recibirás hasta tres ayudas para adivinar</h5>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="flip-box col-sm-12 col-md-4 col-lg-2">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img class="image" src="./images/footballers_argentinos_10.png" alt="Figurita 10">
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="over">
+                            <p>Chocolatines AGUILA Serie Futbolistas Argentinos año 1929</p>
+                            <p>Goalkeeper de Argentinos De Quilmes Juan Botazo (Bottaso o Botasso).</p>
+                            <p>Considerado el mejor en su puesto fue subcampéon mundial 1930.</p>
+                            <p>Luego del mundial paso al Racing Club de Avellaneda.</p>
+                        </div>
+                        <img class="image" src="./images/footballers_argentinos_00.png" alt="Fondo Figurita">
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box col-sm-12 col-md-6 col-lg-6">
+                <div>
+                    <div class="guess">
+                        <h4>A este goalkeeper lo apodaban "La _____ Métalica"</h4>
+                    </div>
+
+                    <div class="guess">
+                        <form id="guess-form">
+                            <div class="form-group">
+
+                                <div>
+                                    <h3 id="counter">
+                                        Intentos: 0</h3>
+                                </div>
+                                <label class="" for="">
+                                    <h3>
+                                        Ayudas:
+                                        <span class="fas fa-dice-one" style="display:none" id="help1"
+                                            data-toggle="collapse" href="#alert1"></span>
+                                        <span class="fas fa-dice-two" style="display:none" id="help2"
+                                            data-toggle="collapse" href="#alert2"></span>
+                                        <span class="fas fa-dice-three" style="display:none" id="help3"
+                                            data-toggle="collapse" href="#alert3"></span>
+                                    </h3>
+                                </label>
+                                <div>
+                                    <div>
+                                        <label>
+                                            <input class="form-control" type="test" id="guess-name" aria-label="..."
+                                                placeholder="tu respuesta aquí" autocomplete="off">
+                                        </label>
+
+                                        <input class="btn btn-default" type="submit" name="submit" value="Adivinar"
+                                            id="guess-btn" />
+                                    </div>
+                                    <div id="guess-txt"></div>
+                                </div>
+
+                                <div class="alert alert-info alert-dismissible collapse" role="alert" id="alert1">
+                                    <button id="alert1btn" type="button" class="close" data-toggle="collapse"
+                                        href="#alert1" aria-label="Cerrar"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <strong>Ayuda 1: </strong> Empieza con C
+                                </div>
+                                <div class="alert alert-info alert-dismissible collapse" role="alert" id="alert2">
+                                    <button id="alert2btn" type="button" class="close" data-toggle="collapse"
+                                        href="#alert2" aria-label="Cerrar"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <strong>Ayuda 2: </strong> Contiene una T
+                                </div>
+                                <div class="alert alert-info alert-dismissible collapse" role="alert" id="alert3">
+                                    <button id="alert3btn" type="button" class="close" data-toggle="collapse"
+                                        href="#alert3" aria-label="Cerrar"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <strong>Ayuda 3: </strong> Termina con A
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Aníbal H. Flores - <span class="copyleft" /> <span class="copyrigth" /> 2020 |
+                <a href="LICENSE" id="licence" class="a">Licencia, Terminos y Condiciones</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

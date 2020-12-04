@@ -329,3 +329,29 @@ MEDIA QUERIES
    padding: 10px  !important;
  }
 }
+
+.alert.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+#guess-txt {
+  font-family: Montserrat;
+  font-weight: 300;
+}
+
+#guess-txt.hit {
+  border-radius: 6px;
+  background: #baec97;
+}
+
+#guess-txt.low {
+  border-radius: 6px;
+  background: #ec918e;
+}
+
+#guess-txt.high {
+  border-radius: 6px;
+  background: #79a8ee;
+}
